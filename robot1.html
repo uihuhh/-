@@ -1,0 +1,50 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'shadow' }
+        },
+        legend: { data: ['积极看法', '潜在担忧'] },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: { type: 'value' },
+        yAxis: {
+            type: 'category',
+            data: ['医疗领域', '教育领域', '社会影响评估', '公众担忧']
+        },
+        series: [
+            {
+                name: '积极看法',
+                type: 'bar',
+                stack: '总量',
+                label: { show: true, position: 'inside' },
+                data: [70, 50, 60, 50]
+            },
+            {
+                name: '潜在担忧',
+                type: 'bar',
+                stack: '总量',
+                label: { show: true, position: 'inside' },
+                data: [0, 0, 40, 65]
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>
+```
